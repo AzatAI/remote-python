@@ -16,7 +16,8 @@ RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 RUN mkdir /root/.ssh
 
 RUN adduser azt
-usermod -aG sudo azt
+RUN usermod -aG sudo azt
+RUN echo 'azt:aztpasswd' |chpasswd
 
 RUN mkdir /home/azt/.ssh
 
